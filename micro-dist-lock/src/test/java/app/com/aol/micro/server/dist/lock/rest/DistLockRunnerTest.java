@@ -31,8 +31,8 @@ public class DistLockRunnerTest {
 
     @Test
     public void testOwnLock() {
-        assertThat(rest.getJson("http://localhost:8080/test-app/lock-owner/dummy-key"), is("true"));
-        assertThat(rest.getJson("http://localhost:8080/test-app/lock-owner/dummyKeyProvider2"), is("false"));
+        assertThat(rest.getJson("http://localhost:10080/test-app/lock-owner/dummy-key"), is("true"));
+        assertThat(rest.getJson("http://localhost:10080/test-app/lock-owner/dummyKeyProvider2"), is("false"));
 
     }
 }

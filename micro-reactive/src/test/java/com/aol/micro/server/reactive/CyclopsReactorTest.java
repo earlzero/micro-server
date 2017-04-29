@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.aol.cyclops.control.FutureW;
 import com.aol.cyclops.control.LazyReact;
@@ -50,6 +51,7 @@ public class CyclopsReactorTest {
 				 .toListX(),equalTo(ListX.of(1,2,3)));
 	}
 
+	@Ignore
 	@Test
 	public void testFutureStream() {
 		assertThat(CyclopsReactor.futureStream(Flux.just(1,2,3), new LazyReact())

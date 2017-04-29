@@ -20,7 +20,7 @@ public class RestContextListenerTest {
 	@Before
 	public void setUp() {
 		statsResource = new ServletStatusResource();
-		ServerData serverData = new ServerData(8080, Arrays.asList(statsResource), null, "baseUrl", () -> "test");
+		ServerData serverData = new ServerData(10080, Arrays.asList(statsResource), null, "baseUrl", () -> "test");
 		restContextListener = new JerseySpringIntegrationContextListener(serverData);
 	}
 

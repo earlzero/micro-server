@@ -16,7 +16,7 @@ public class RegisterEntryTest {
     @Before
     public void setUp() throws Exception {
         entry = new RegisterEntry(
-                                  8080, "hostname", "name", "context", new Date(), null, 8080);
+                                  10080, "hostname", "name", "context", new Date(), null, 10080);
     }
 
     @Test

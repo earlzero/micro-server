@@ -23,10 +23,10 @@ import com.aol.micro.server.testing.RestAgent;
 public class AsyncResource implements RestResource{
 
 	private final SimpleReact simpleReact =new SimpleReact();
-	private final PStack<String> urls = ConsPStack.from(Arrays.asList("http://localhost:8080/async-app/async/ping2",
-			"http://localhost:8080/async-app/async/ping",
-			"http://localhost:8080/async-app/async/ping",
-			"http://localhost:8080/async-app/async/ping"));
+	private final PStack<String> urls = ConsPStack.from(Arrays.asList("http://localhost:10080/async-app/async/ping2",
+			"http://localhost:10080/async-app/async/ping",
+			"http://localhost:10080/async-app/async/ping",
+			"http://localhost:10080/async-app/async/ping"));
     
     	private final RestAgent client = new RestAgent();
     	

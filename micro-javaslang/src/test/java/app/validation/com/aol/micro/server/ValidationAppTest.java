@@ -66,7 +66,7 @@ public class ValidationAppTest {
 
 		stream.block();
 		rest.post(
-				"http://localhost:8080/validation-app/status/ping", null,
+				"http://localhost:10080/validation-app/status/ping", null,
 				ImmutableJavaslangEntity.class);
 		
 
@@ -77,7 +77,7 @@ public class ValidationAppTest {
 
 		stream.block();
 		rest.post(
-				"http://localhost:8080/validation-app/status/ping", entity,
+				"http://localhost:10080/validation-app/status/ping", entity,
 				ImmutableJavaslangEntity.class);
 		
 

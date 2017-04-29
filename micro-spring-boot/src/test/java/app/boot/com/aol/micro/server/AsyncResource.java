@@ -21,10 +21,10 @@ import com.google.common.collect.ImmutableList;
 public class AsyncResource implements RestResource{
 
 	private final SimpleReact simpleReact =new SimpleReact();
-	private final ImmutableList<String> urls = ImmutableList.of("http://localhost:8080/async-app/async/ping2",
-			"http://localhost:8080/async-app/async/ping",
-			"http://localhost:8080/async-app/async/ping",
-			"http://localhost:8080/async-app/async/ping");
+	private final ImmutableList<String> urls = ImmutableList.of("http://localhost:10080/async-app/async/ping2",
+			"http://localhost:10080/async-app/async/ping",
+			"http://localhost:10080/async-app/async/ping",
+			"http://localhost:10080/async-app/async/ping");
     
     	private final AsyncRestClient client = new AsyncRestClient(1000,1000).withAccept("text/plain");
     	

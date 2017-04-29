@@ -20,23 +20,23 @@ public class EnvironmentTest {
 		
 		
 		Environment environment = new Environment(new Properties(),
-				Arrays.asList(new ModuleBean(8081, "host1", () -> "test")));
-		assertThat(environment.getModuleBean(()-> "test").getPort(), is(8081));
+				Arrays.asList(new ModuleBean(10081, "host1", () -> "test")));
+		assertThat(environment.getModuleBean(()-> "test").getPort(), is(10081));
 	}
 	@Test
 	public void testDefaultPort() {
 		Environment environment = new Environment(new Properties());
 		environment.assureModule(() ->"context");
-		assertThat(environment.getModuleBean(()-> "context").getPort(), is(8080));
+		assertThat(environment.getModuleBean(()-> "context").getPort(), is(10080));
 	}
 	
 	@Test
 	public void testGetModuleBeanOverridePort() {
 		Properties props = new Properties();
-		props.put("context.port", 8081);
+		props.put("context.port", 10081);
 		Environment environment = new Environment(props);
 		environment.assureModule(() ->"context");
-		assertThat(environment.getModuleBean(()-> "context").getPort(), is(8081));
+		assertThat(environment.getModuleBean(()-> "context").getPort(), is(10081));
 	}
 	
 	@Test

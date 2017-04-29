@@ -34,7 +34,7 @@ public class SimpleAppTest {
 		
 		@Test @Ignore //failing in gradle
 		public void basicEndPoint(){
-			assertThat(rest.get("http://localhost:8080/simple/mypath/hello").join(),is("world"));
+			assertThat(rest.get("http://localhost:10080/simple/mypath/hello").join(),is("world"));
 		}
 		
 }

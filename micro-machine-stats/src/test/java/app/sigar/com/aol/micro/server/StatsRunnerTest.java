@@ -44,7 +44,7 @@ public class StatsRunnerTest {
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
 
-        assertThat(rest.get("http://localhost:8080/simple-app/stats/machine"), containsString("cpu-stats"));
+        assertThat(rest.get("http://localhost:10080/simple-app/stats/machine"), containsString("cpu-stats"));
         assertTrue(new File(
                             "/tmp/sigar-lib").exists());
     }

@@ -47,9 +47,9 @@ public class HealthRunnerTest {
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException, IOException {
 
-        assertThat(rest.getJson("http://localhost:8080/simple-app/health"),
+        assertThat(rest.getJson("http://localhost:10080/simple-app/health"),
                    is("{\"myHealthCheck\":{\"healthy\":true}}"));
-        assertThat(rest.get("http://localhost:8080/simple-app/test"), is("true"));
+        assertThat(rest.get("http://localhost:10080/simple-app/test"), is("true"));
 
     }
 

@@ -18,10 +18,10 @@ public class TestAppResource implements TestAppRestResource {
 
 	private final SimpleReact simpleReact = new SimpleReact();
 	private final  NIORestClient  template;
-	private final List<String> urls = Arrays.asList("http://localhost:8081/alternative-app/alt-status/ping",
-			"http://localhost:8080/test-app/test-status/ping",
-			"http://localhost:8082/simple-app/status/ping",
-			"http://localhost:8080/test-app/test-status/ping");
+	private final List<String> urls = Arrays.asList("http://localhost:10081/alternative-app/alt-status/ping",
+			"http://localhost:10080/test-app/test-status/ping",
+			"http://localhost:10082/simple-app/status/ping",
+			"http://localhost:10080/test-app/test-status/ping");
 	
 	@Autowired
 	public TestAppResource(NIORestClient template) {

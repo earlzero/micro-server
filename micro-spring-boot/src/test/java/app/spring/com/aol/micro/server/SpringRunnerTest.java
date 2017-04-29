@@ -40,7 +40,7 @@ public class SpringRunnerTest {
 	@Test
 	public void testAutoWiring() throws InterruptedException, ExecutionException{
 		
-		assertThat(rest.get("http://localhost:8080/spring-app/spring/ping"),is("hello world"));
+		assertThat(rest.get("http://localhost:10080/spring-app/spring/ping"),is("hello world"));
 		
 	}
 	

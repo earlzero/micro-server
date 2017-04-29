@@ -44,7 +44,7 @@ public class CustomRunnerTest {
 	public void runAppAndBasicTest() throws InterruptedException, ExecutionException{
 
 		
-		assertThat(rest.get("http://localhost:8080/simple-app/status/ping").getStatus(),is(502));
+		assertThat(rest.get("http://localhost:10080/simple-app/status/ping").getStatus(),is(502));
 		
 		
 	}

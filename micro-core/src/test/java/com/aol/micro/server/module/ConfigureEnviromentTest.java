@@ -15,7 +15,7 @@ public class ConfigureEnviromentTest {
 
 	@Before
 	public void setUp() {
-		moduleBean = ModuleBean.builder().port(8080).host("host").module(() -> "simple").build();
+		moduleBean = ModuleBean.builder().port(10080).host("host").module(() -> "simple").build();
 	}
 
 	@Test

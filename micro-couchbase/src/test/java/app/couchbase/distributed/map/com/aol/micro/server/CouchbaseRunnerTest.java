@@ -50,8 +50,8 @@ public class CouchbaseRunnerTest {
     @Test
     @Ignore
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
-        rest.get("http://localhost:8080/simple-app/couchbase/put");
-        assertThat(rest.get("http://localhost:8080/simple-app/couchbase/get"), containsString("world"));
+        rest.get("http://localhost:10080/simple-app/couchbase/put");
+        assertThat(rest.get("http://localhost:10080/simple-app/couchbase/get"), containsString("world"));
 
     }
 

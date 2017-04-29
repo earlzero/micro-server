@@ -52,7 +52,7 @@ public class ValidationAppTest {
 		//stream.block();
 		
 		rest.post(
-				"http://localhost:8080/guava-app/status/ping", null,
+				"http://localhost:10080/guava-app/status/ping", null,
 				ImmutableEntity.class);
 		
 
@@ -63,7 +63,7 @@ public class ValidationAppTest {
 
 		//stream.block();
 		rest.post(
-				"http://localhost:8080/guava-app/status/ping", entity,
+				"http://localhost:10080/guava-app/status/ping", entity,
 				ImmutableEntity.class);
 		
 

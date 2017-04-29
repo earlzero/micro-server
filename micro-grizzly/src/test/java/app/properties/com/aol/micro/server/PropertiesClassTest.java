@@ -46,7 +46,7 @@ public class PropertiesClassTest implements RestResource {
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
 
-        assertThat(rest.get("http://localhost:8080/simple-app/single/ping"), is("boo!"));
+        assertThat(rest.get("http://localhost:10080/simple-app/single/ping"), is("boo!"));
 
     }
 

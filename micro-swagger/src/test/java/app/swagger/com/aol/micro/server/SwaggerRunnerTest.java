@@ -40,7 +40,7 @@ public class SwaggerRunnerTest {
 		
 		
 		
-		assertThat(rest.getJson("http://localhost:8080/api-docs/stats"),containsString("Make a ping call"));
+		assertThat(rest.getJson("http://localhost:10080/api-docs/stats"),containsString("Make a ping call"));
 	
 	}
 	

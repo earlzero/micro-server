@@ -30,7 +30,7 @@ public class LogbackRootLoggerRunnerTest {
 
 	@Test
 	public void testChangeToWarn() {
-		assertThat(rest.get("http://localhost:8080/logback/logback/rootlogger/change/to/warn"), is("WARN"));
+		assertThat(rest.get("http://localhost:10080/logback/logback/rootlogger/change/to/warn"), is("WARN"));
 	}
 	
 

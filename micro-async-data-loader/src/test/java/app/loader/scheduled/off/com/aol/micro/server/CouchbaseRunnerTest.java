@@ -52,11 +52,11 @@ public class CouchbaseRunnerTest {
 
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
-        rest.get("http://localhost:8080/simple-app/couchbase/put");
-        assertThat(rest.get("http://localhost:8080/simple-app/couchbase/get"), containsString("world"));
+        rest.get("http://localhost:10080/simple-app/couchbase/put");
+        assertThat(rest.get("http://localhost:10080/simple-app/couchbase/get"), containsString("world"));
 
         Thread.sleep(2000);
-        String json = rest.getJson("http://localhost:8080/simple-app/couchbase/loading-events");
+        String json = rest.getJson("http://localhost:10080/simple-app/couchbase/loading-events");
         List list = JacksonUtil.convertFromJson(json, List.class);
         System.out.println(list);
         assertTrue(list.size() == 0);

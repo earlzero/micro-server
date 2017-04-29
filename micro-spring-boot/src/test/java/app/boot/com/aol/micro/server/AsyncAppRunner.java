@@ -29,7 +29,7 @@ public class AsyncAppRunner {
 		new MicroserverApp( ()-> "async-app");
 		Thread.sleep(2000);
 		
-		assertThat(rest.get("http://localhost:8080/async-app/async/expensive").get(),is(";test!;test!;test!"));
+		assertThat(rest.get("http://localhost:10080/async-app/async/expensive").get(),is(";test!;test!;test!"));
 	
 	}
 	

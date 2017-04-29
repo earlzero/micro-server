@@ -44,7 +44,7 @@ public class SingleClassTest implements RestResource{
 		
 		
 		
-		assertThat(rest.get("http://localhost:8080/simple-app/single/ping"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/simple-app/single/ping"),is("ok"));
 	
 	}
 

@@ -72,7 +72,7 @@ public class CustomAliasLogTest implements RestResource {
 
         int read = new ReactiveRequest(
                                        10000,
-                                       10000).getTextStream("http://localhost:8080/log-app/log-tail/stream-file?alias=custom1")
+                                       10000).getTextStream("http://localhost:10080/log-app/log-tail/stream-file?alias=custom1")
                                              .limit(5)
                                              .toList()
                                              .size();

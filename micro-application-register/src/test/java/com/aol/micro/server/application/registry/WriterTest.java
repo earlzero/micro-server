@@ -32,7 +32,7 @@ public class WriterTest {
                                                           "service-reg-writer").getAbsolutePath()));
 
         entry = new RegisterEntry(
-                                  8080, "host", "module", "context", new Date(), null, 8080);
+                                  10080, "host", "module", "context", new Date(), null, 10080);
     }
 
     @Test

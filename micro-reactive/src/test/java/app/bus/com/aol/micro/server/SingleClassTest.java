@@ -56,7 +56,7 @@ public class SingleClassTest implements RestResource {
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
 
-        assertThat(rest.get("http://localhost:8080/simple-app/single/ping"), is("ok"));
+        assertThat(rest.get("http://localhost:10080/simple-app/single/ping"), is("ok"));
         Thread.sleep(500);
         assertThat(lastRecieved, equalTo("input"));
 

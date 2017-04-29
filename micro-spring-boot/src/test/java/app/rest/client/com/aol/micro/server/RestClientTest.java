@@ -60,20 +60,20 @@ public class RestClientTest {
 	public void testCRUD() throws InterruptedException, ExecutionException{
 		
 		
-		assertThat(listClient.get("http://localhost:8080/rest-app/rest/get").get().get(0),is("ok"));
-		assertThat(setClient.post("http://localhost:8080/rest-app/rest/post",ImmutableMap.of(1,"hello")).get(),is(ImmutableSet.of("hello")));
-		assertThat(setClient.put("http://localhost:8080/rest-app/rest/put",ImmutableMap.of(1,"hello")).get(),is(ImmutableSet.of("hello")));
-		assertThat(listClient.delete("http://localhost:8080/rest-app/rest/delete").get().get(0),is("ok"));
+		assertThat(listClient.get("http://localhost:10080/rest-app/rest/get").get().get(0),is("ok"));
+		assertThat(setClient.post("http://localhost:10080/rest-app/rest/post",ImmutableMap.of(1,"hello")).get(),is(ImmutableSet.of("hello")));
+		assertThat(setClient.put("http://localhost:10080/rest-app/rest/put",ImmutableMap.of(1,"hello")).get(),is(ImmutableSet.of("hello")));
+		assertThat(listClient.delete("http://localhost:10080/rest-app/rest/delete").get().get(0),is("ok"));
 	}
 	
 	@Test
 	public void testCRUDGenerics() throws InterruptedException, ExecutionException{
 		
 		
-		assertThat(genericsClient.get("http://localhost:8080/rest-app/generics/get").get().get(0),is(new MyEntity()));
-		assertThat(genericsClient.post("http://localhost:8080/rest-app/generics/post",ImmutableMap.of(1,"hello")).get(),is(ImmutableList.of(new MyEntity())));
-		assertThat(genericsClient.put("http://localhost:8080/rest-app/generics/put",ImmutableMap.of(1,"hello")).get(),is(ImmutableList.of(new MyEntity())));
-		assertThat(genericsClient.delete("http://localhost:8080/rest-app/generics/delete").get().get(0),is(new MyEntity()));
+		assertThat(genericsClient.get("http://localhost:10080/rest-app/generics/get").get().get(0),is(new MyEntity()));
+		assertThat(genericsClient.post("http://localhost:10080/rest-app/generics/post",ImmutableMap.of(1,"hello")).get(),is(ImmutableList.of(new MyEntity())));
+		assertThat(genericsClient.put("http://localhost:10080/rest-app/generics/put",ImmutableMap.of(1,"hello")).get(),is(ImmutableList.of(new MyEntity())));
+		assertThat(genericsClient.delete("http://localhost:10080/rest-app/generics/delete").get().get(0),is(new MyEntity()));
 	}
 	
 	/**
@@ -85,28 +85,28 @@ public class RestClientTest {
 	public void testCRUDSpring() throws InterruptedException, ExecutionException, RestClientException, URISyntaxException{
 		
 		
-		assertThat(rest.getForEntity(new URI("http://localhost:8080/rest-app/rest/get"),List.class).get().getBody().get(0),is("ok"));
+		assertThat(rest.getForEntity(new URI("http://localhost:10080/rest-app/rest/get"),List.class).get().getBody().get(0),is("ok"));
 		
-		assertThat(rest.postForEntity("http://localhost:8080/rest-app/rest/post", new HttpEntity(ImmutableMap.of(1,"hello")), ImmutableSet.class).get().getBody(),is(ImmutableSet.of("hello")));
-		assertThat( rest.put("http://localhost:8080/rest-app/rest/put",new HttpEntity(ImmutableMap.of(1,"hello")),ImmutableSet.class).get()
+		assertThat(rest.postForEntity("http://localhost:10080/rest-app/rest/post", new HttpEntity(ImmutableMap.of(1,"hello")), ImmutableSet.class).get().getBody(),is(ImmutableSet.of("hello")));
+		assertThat( rest.put("http://localhost:10080/rest-app/rest/put",new HttpEntity(ImmutableMap.of(1,"hello")),ImmutableSet.class).get()
 									,is(nullValue()));
-		assertThat(rest.delete("http://localhost:8080/rest-app/rest/delete").get(),is(nullValue()));
+		assertThat(rest.delete("http://localhost:10080/rest-app/rest/delete").get(),is(nullValue()));
 	}
 	
 	@Test
 	public void testCRUDGenericsSpring() throws InterruptedException, ExecutionException{
 		
 		
-		assertThat(rest.exchange("http://localhost:8080/rest-app/generics/get",HttpMethod.GET,null,new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
+		assertThat(rest.exchange("http://localhost:10080/rest-app/generics/get",HttpMethod.GET,null,new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
 				.get().getBody().get(0),is(new MyEntity()));
 		
-		assertThat(rest.exchange("http://localhost:8080/rest-app/generics/post",HttpMethod.POST,new HttpEntity(ImmutableMap.of(1,"hello")),new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
+		assertThat(rest.exchange("http://localhost:10080/rest-app/generics/post",HttpMethod.POST,new HttpEntity(ImmutableMap.of(1,"hello")),new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
 				.get().getBody(),is(ImmutableList.of(new MyEntity())));
 		
-		assertThat(rest.exchange("http://localhost:8080/rest-app/generics/put",HttpMethod.PUT,new HttpEntity(ImmutableMap.of(1,"hello")),new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
+		assertThat(rest.exchange("http://localhost:10080/rest-app/generics/put",HttpMethod.PUT,new HttpEntity(ImmutableMap.of(1,"hello")),new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
 				.get().getBody(),is(ImmutableList.of(new MyEntity())));
 		
-		assertThat(rest.exchange("http://localhost:8080/rest-app/generics/delete",HttpMethod.DELETE,null,new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
+		assertThat(rest.exchange("http://localhost:10080/rest-app/generics/delete",HttpMethod.DELETE,null,new ParameterizedTypeReference<ImmutableList<MyEntity>>(){})
 				.get().getBody().get(0),is(new MyEntity()));
 		
 	}

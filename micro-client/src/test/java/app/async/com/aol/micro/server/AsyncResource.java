@@ -21,10 +21,10 @@ import com.aol.micro.server.rest.client.nio.AsyncRestClient;
 public class AsyncResource implements RestResource{
 
 	
-	private final List<String> urls =Arrays.asList("http://localhost:8080/async-app/async/ping2",
-			"http://localhost:8080/async-app/async/ping",
-			"http://localhost:8080/async-app/async/ping",
-			"http://localhost:8080/async-app/async/ping");
+	private final List<String> urls =Arrays.asList("http://localhost:10080/async-app/async/ping2",
+			"http://localhost:10080/async-app/async/ping",
+			"http://localhost:10080/async-app/async/ping",
+			"http://localhost:10080/async-app/async/ping");
     
     	private final AsyncRestClient client = new AsyncRestClient(100,100).withAccept("text/plain");
     	

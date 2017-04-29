@@ -37,8 +37,8 @@ public class S3RunnerTest {
     @Test
     @Ignore
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
-        rest.get("http://localhost:8080/simple-app/s3/put");
-        assertThat(rest.get("http://localhost:8080/simple-app/s3/get"), containsString("world"));
+        rest.get("http://localhost:10080/simple-app/s3/put");
+        assertThat(rest.get("http://localhost:10080/simple-app/s3/get"), containsString("world"));
 
     }
 

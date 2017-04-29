@@ -46,7 +46,7 @@ public class FilterRunnerTest {
 	public void testAutoDiscoveredFilter() throws InterruptedException, ExecutionException{
 		AutodiscoveredFilter.setCalled(0);
 		
-		assertThat(rest.get("http://localhost:8080/filter-app/status/ping"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/filter-app/status/ping"),is("ok"));
 		assertThat(AutodiscoveredFilter.getCalled(),is(1));
 		assertThat(AutodiscoveredFilter.isBeanSet(),is(true));
 	}
@@ -54,7 +54,7 @@ public class FilterRunnerTest {
 	public void testConfiguredFilter() throws InterruptedException, ExecutionException{
 		
 		assertThat(ConfiguredFilter.getCalled(),is(0));
-		assertThat(rest.get("http://localhost:8080/filter-app/status/ping2"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/filter-app/status/ping2"),is("ok"));
 		assertThat(ConfiguredFilter.getCalled(),is(1));
 	}
 	

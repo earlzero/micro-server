@@ -25,7 +25,7 @@ public class DatadogMetricsRunnerTest {
     public void runAppAndBasicTest() {
 
         try {
-            assertThat(rest.get("http://localhost:8080/datadog-app/metrics/ping"), is("ok"));
+            assertThat(rest.get("http://localhost:10080/datadog-app/metrics/ping"), is("ok"));
         } catch (Exception e) {
 
         }

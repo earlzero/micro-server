@@ -47,7 +47,7 @@ public class IncludesRunnerTest {
 
 		
 		
-		assertThat(rest.getJson("http://localhost:8080/simple-app/status/ping"),is("{\"primitive\":null}"));
+		assertThat(rest.getJson("http://localhost:10080/simple-app/status/ping"),is("{\"primitive\":null}"));
 		
 		
 	}

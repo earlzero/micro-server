@@ -44,10 +44,10 @@ public class EmbeddedAppTest {
 	@Test
 	public void confirmExpectedUrlsPresentTest() throws InterruptedException, ExecutionException{
 		
-		assertThat(rest.get("http://localhost:8080/test-app/test-status/ping"),is("test!"));
+		assertThat(rest.get("http://localhost:10080/test-app/test-status/ping"),is("test!"));
 		
 		
-		assertThat((List<String>)rest.post("http://localhost:8081/alternative-app/alt-status/ping",new ImmutableEntity("value",ImmutableList.of("hello","world")),List.class),
+		assertThat((List<String>)rest.post("http://localhost:10081/alternative-app/alt-status/ping",new ImmutableEntity("value",ImmutableList.of("hello","world")),List.class),
 				hasItem("hello"));
 	
 	}
@@ -55,7 +55,7 @@ public class EmbeddedAppTest {
 	
 	@Test
 	public void nonBlockingRestClientTest(){
-		assertThat(rest.get("http://localhost:8080/test-app/test-status/rest-calls"),is("-*test!-*test!"));
+		assertThat(rest.get("http://localhost:10080/test-app/test-status/rest-calls"),is("-*test!-*test!"));
 	}
 	
 	<T> CompletableFuture<T> toCompletableFuture(
@@ -90,13 +90,13 @@ public class EmbeddedAppTest {
 	@Test(expected=NotFoundException.class)
 	public void confirmAltAppCantUseTestAppResources(){
 		
-		assertThat(rest.get("http://localhost:8080/alternative-app/test-status/ping"),is("test!"));
+		assertThat(rest.get("http://localhost:10080/alternative-app/test-status/ping"),is("test!"));
 	
 	}
 	@Test(expected=NotFoundException.class)
 	public void confirmTestAppCantUseAltAppResources(){
 		
-		assertThat((List<String>)rest.post("http://localhost:8081/test-app/alt-status/ping",new ImmutableEntity("value",ImmutableList.of("hello","world")),List.class),
+		assertThat((List<String>)rest.post("http://localhost:10081/test-app/alt-status/ping",new ImmutableEntity("value",ImmutableList.of("hello","world")),List.class),
 				hasItem("hello"));
 	
 	}

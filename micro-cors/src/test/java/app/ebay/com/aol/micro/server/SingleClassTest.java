@@ -47,7 +47,7 @@ public class SingleClassTest implements RestResource{
 		
 		Client client = ClientBuilder.newClient();
 
-		WebTarget resource = client.target("http://localhost:8080/simple-app/single/ping");
+		WebTarget resource = client.target("http://localhost:10080/simple-app/single/ping");
 
 		Builder request = resource.request();
 		request.accept(MediaType.TEXT_PLAIN);

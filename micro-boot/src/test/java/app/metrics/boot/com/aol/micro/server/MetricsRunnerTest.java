@@ -48,7 +48,7 @@ public class MetricsRunnerTest {
 		
 		
 		
-		assertThat(rest.get("http://localhost:8080/simple-app/metrics/ping"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/simple-app/metrics/ping"),is("ok"));
 		
 		
 		assertThat(TestReporter.getTimer().size(),greaterThan(0));

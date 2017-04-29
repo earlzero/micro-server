@@ -46,17 +46,17 @@ public class SingleClassTest implements RestResource {
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
 
-        rest.get("http://localhost:8080/simple-app/single/error");
+        rest.get("http://localhost:10080/simple-app/single/error");
 
-        assertThat(rest.get("http://localhost:8080/simple-app/system-errors/status"),
+        assertThat(rest.get("http://localhost:10080/simple-app/system-errors/status"),
                    is(HealthStatus.State.Errors.name()));
-        assertThat(rest.getJson("http://localhost:8080/simple-app/system-errors/errors"),
+        assertThat(rest.getJson("http://localhost:10080/simple-app/system-errors/errors"),
                    containsString("formatted-date"));
 
-        rest.get("http://localhost:8080/simple-app/single/fatal");
+        rest.get("http://localhost:10080/simple-app/single/fatal");
 
-        System.out.println(rest.getJson("http://localhost:8080/simple-app/system-errors/errors"));
-        assertThat(rest.get("http://localhost:8080/simple-app/system-errors/status"),
+        System.out.println(rest.getJson("http://localhost:10080/simple-app/system-errors/errors"));
+        assertThat(rest.get("http://localhost:10080/simple-app/system-errors/status"),
                    is(HealthStatus.State.Fatal.name()));
 
     }

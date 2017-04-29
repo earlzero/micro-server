@@ -50,7 +50,7 @@ public class SimpleClassTest {
 	@Test
 	public void runAppAndBasicTest() throws InterruptedException, ExecutionException{
 		
-		assertThat(rest.get("http://localhost:8080/simple-app/status/ping"),is("true"));
+		assertThat(rest.get("http://localhost:10080/simple-app/status/ping"),is("true"));
 	
 	}
 

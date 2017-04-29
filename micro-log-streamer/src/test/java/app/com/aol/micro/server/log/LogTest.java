@@ -71,7 +71,7 @@ public class LogTest implements RestResource {
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
 
         int read = new ReactiveRequest(
-                                       10000, 10000).getTextStream("http://localhost:8080/log-app/log-tail/stream")
+                                       10000, 10000).getTextStream("http://localhost:10080/log-app/log-tail/stream")
                                                     .limit(5)
                                                     .toList()
                                                     .size();

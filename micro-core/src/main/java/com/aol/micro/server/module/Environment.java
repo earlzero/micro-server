@@ -16,11 +16,12 @@ public class Environment {
 
 	private volatile Map<String, ModuleBean> modulePort;
 	private final Properties properties;
-	private volatile int nextPort = 8080;
+	private volatile int nextPort = 10080;
 
 	public Environment(Properties propertyFactory, Collection<ModuleBean> modules) {
 		modulePort = modules.stream().collect(Collectors.toMap(key -> key.getModule().getContext(), value -> value));
 		this.properties = propertyFactory;
+		nextPort = Integer.valueOf(properties.getProperty("micro.server.next.port", "10080"));
 	}
 
 	public Environment(Properties propertyFactory) {

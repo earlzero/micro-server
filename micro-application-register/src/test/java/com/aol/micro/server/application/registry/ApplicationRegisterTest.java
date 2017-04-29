@@ -33,9 +33,9 @@ public class ApplicationRegisterTest {
 
 	@Test
 	public void testRegister() {
-		ServerData data1 = new ServerData(8080, new ArrayList<>(), null, "url", () -> "");
-		ServerData data2 = new ServerData(8080, new ArrayList<>(), null, "url", () -> "");
-		ServerData data3 = new ServerData(8080, new ArrayList<>(), null, "url", () -> "");
+		ServerData data1 = new ServerData(10080, new ArrayList<>(), null, "url", () -> "");
+		ServerData data2 = new ServerData(10080, new ArrayList<>(), null, "url", () -> "");
+		ServerData data3 = new ServerData(10080, new ArrayList<>(), null, "url", () -> "");
 
 		List<ServerData> datas = Arrays.asList(data1, data2, data3);
 

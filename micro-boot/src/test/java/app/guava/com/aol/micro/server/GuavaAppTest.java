@@ -71,7 +71,7 @@ public class GuavaAppTest {
 		stream.block();
 
 		assertThat((List<String>) rest.post(
-				"http://localhost:8080/guava-app/status/ping", entity,
+				"http://localhost:10080/guava-app/status/ping", entity,
 				List.class), hasItem("hello"));
 
 	}
@@ -82,10 +82,10 @@ public class GuavaAppTest {
 
 		stream.block();
 
-		assertThat(rest.post("http://localhost:8080/guava-app/status/optional",
+		assertThat(rest.post("http://localhost:10080/guava-app/status/optional",
 				present, String.class), is("\"test\""));
 
-		assertThat(rest.post("http://localhost:8080/guava-app/status/optional",
+		assertThat(rest.post("http://localhost:10080/guava-app/status/optional",
 				absent, String.class), is("null"));
 
 	}

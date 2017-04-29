@@ -70,13 +70,13 @@ public class SingleClassTest implements RestResource {
 
         List<String> boos = new ReactiveRequest(
                                                 1000, 1000)
-                                                           .getJsonStream("http://localhost:8080/simple-app/single/infinite-boo",
+                                                           .getJsonStream("http://localhost:10080/simple-app/single/infinite-boo",
                                                                           String.class)
                                                            .toList();
 
         assertThat(boos.size(), is(5));
-        // System.out.println(rest.get("http://localhost:8080/simple-app/single/ping"));
-        // assertThat(rest.get("http://localhost:8080/simple-app/single/ping"),
+        // System.out.println(rest.get("http://localhost:10080/simple-app/single/ping"));
+        // assertThat(rest.get("http://localhost:10080/simple-app/single/ping"),
         // is("[1,2,3,4]"));
 
         // assertThat(lastRecieved, equalTo("input"));

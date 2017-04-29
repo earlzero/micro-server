@@ -42,14 +42,14 @@ public class FilterRunnerTest {
 	public void testAutoDiscoveredFilter() throws InterruptedException, ExecutionException{
 		Thread.sleep(100);
 		assertThat(AutodiscoveredFilter.getCalled(),is(0));
-		assertThat(rest.get("http://localhost:8080/filter-app/status/ping"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/filter-app/status/ping"),is("ok"));
 		assertThat(AutodiscoveredFilter.getCalled(),is(0));
 	}
 	@Test
 	public void testConfiguredFilter() throws InterruptedException, ExecutionException{
 		Thread.sleep(100);
 		assertThat(ConfiguredFilter.getCalled(),is(0));
-		assertThat(rest.get("http://localhost:8080/filter-app/status/ping2"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/filter-app/status/ping2"),is("ok"));
 		assertThat(ConfiguredFilter.getCalled(),is(1));
 	}
 	

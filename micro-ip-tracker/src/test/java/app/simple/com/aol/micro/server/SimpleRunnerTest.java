@@ -45,7 +45,7 @@ public class SimpleRunnerTest {
 		
 		
 		
-		assertThat(rest.get("http://localhost:8080/simple-app/status/ping"),is("127.0.0.1"));
+		assertThat(rest.get("http://localhost:10080/simple-app/status/ping"),is("127.0.0.1"));
 		
 		
 	}

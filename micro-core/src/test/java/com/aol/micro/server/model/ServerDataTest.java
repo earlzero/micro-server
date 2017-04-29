@@ -25,7 +25,7 @@ public class ServerDataTest {
 	@Before
 	public void setUp() {
 		rootContext = mock(AnnotationConfigWebApplicationContext.class);
-		serverData = new ServerData(8080,  Arrays.asList(new ServletStatusResource()), rootContext, "url", 
+		serverData = new ServerData(10080,  Arrays.asList(new ServletStatusResource()), rootContext, "url", 
 				()->"context");
 	}
 
@@ -35,13 +35,13 @@ public class ServerDataTest {
 		assertThat(serverData.getResources().size(), is(1));
 		assertThat(serverData.getRootContext(), is(rootContext));
 		assertThat(serverData.getModule().getContext(), is("context"));
-		assertThat(serverData.getPort(), is(8080));
+		assertThat(serverData.getPort(), is(10080));
 	}
 	
 	@Test
 	public void testExtractNull(){
 		
-		serverData = new ServerData(8080,  Arrays.asList((Object)null), rootContext, "url", 
+		serverData = new ServerData(10080,  Arrays.asList((Object)null), rootContext, "url", 
 				()->"context");
 		serverData.extractResources();
 		

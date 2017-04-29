@@ -44,8 +44,8 @@ public class PrototypeLockCuratorRunnerTest {
 	public void runAppAndBasicTest() throws InterruptedException, ExecutionException{
 
 		
-		assertThat(rest.get("http://localhost:8080/simple-app/status/ping"),is("got"));
-		assertThat(rest.get("http://localhost:8080/simple-app/status/ping"),is("got"));
+		assertThat(rest.get("http://localhost:10080/simple-app/status/ping"),is("got"));
+		assertThat(rest.get("http://localhost:10080/simple-app/status/ping"),is("got"));
 		
 		
 	}

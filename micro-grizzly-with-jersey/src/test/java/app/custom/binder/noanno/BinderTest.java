@@ -36,7 +36,7 @@ public class BinderTest {
 		
 		
 		MyIncovationHandler.captured=false;
-		assertThat(rest.get("http://localhost:8080/binder/test"),is("hello world!"));
+		assertThat(rest.get("http://localhost:10080/binder/test"),is("hello world!"));
 		assertTrue(MyIncovationHandler.captured);
 		
 		

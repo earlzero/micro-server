@@ -35,7 +35,7 @@ public class JdbcRunnerTest {
 		
 		server = new MicroserverApp(()->"jdbc-app");
 		server.start();
-		rest.get("http://localhost:8080/jdbc-app/persistence/gen");
+		rest.get("http://localhost:10080/jdbc-app/persistence/gen");
 		
 	}
 	
@@ -49,8 +49,8 @@ public class JdbcRunnerTest {
 		
 		
 		
-		assertThat(rest.get("http://localhost:8080/jdbc-app/persistence/create"),is("ok"));
-		assertThat(listClient.get("http://localhost:8080/jdbc-app/persistence/get").get(),is(JdbcEntity.class));
+		assertThat(rest.get("http://localhost:10080/jdbc-app/persistence/create"),is("ok"));
+		assertThat(listClient.get("http://localhost:10080/jdbc-app/persistence/get").get(),is(JdbcEntity.class));
 		
 		
 	}

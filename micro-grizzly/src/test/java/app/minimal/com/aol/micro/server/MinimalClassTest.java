@@ -43,7 +43,7 @@ public class MinimalClassTest {
 		
 		
 		
-		assertThat(rest.get("http://localhost:8080/minimal-app/single/ping"),is("ok"));
+		assertThat(rest.get("http://localhost:10080/minimal-app/single/ping"),is("ok"));
 	
 	}
 

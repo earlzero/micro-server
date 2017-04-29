@@ -46,18 +46,18 @@ public class ManifestComparatorRunnerTest {
 
     @Test
     public void runAppAndBasicTest() throws InterruptedException, ExecutionException {
-        rest.get("http://localhost:8080/simple-app/comparator/increment");
+        rest.get("http://localhost:10080/simple-app/comparator/increment");
 
-        assertThat(rest.get("http://localhost:8080/simple-app/comparator/check"), equalTo("true"));
-        assertThat(rest.get("http://localhost:8080/simple-app/comparator/get"), equalTo("hello1"));
-        rest.get("http://localhost:8080/simple-app/comparator/increment");
-        assertThat(rest.get("http://localhost:8080/simple-app/comparator/get"), equalTo("hello2"));
+        assertThat(rest.get("http://localhost:10080/simple-app/comparator/check"), equalTo("true"));
+        assertThat(rest.get("http://localhost:10080/simple-app/comparator/get"), equalTo("hello1"));
+        rest.get("http://localhost:10080/simple-app/comparator/increment");
+        assertThat(rest.get("http://localhost:10080/simple-app/comparator/get"), equalTo("hello2"));
 
-        rest.get("http://localhost:8080/simple-app/comparator2/increment");
+        rest.get("http://localhost:10080/simple-app/comparator2/increment");
 
-        assertThat(rest.get("http://localhost:8080/simple-app/comparator/check"), equalTo("false"));
+        assertThat(rest.get("http://localhost:10080/simple-app/comparator/check"), equalTo("false"));
         Thread.sleep(2000);
-        assertThat(rest.get("http://localhost:8080/simple-app/comparator/get"), equalTo("hellob"));
+        assertThat(rest.get("http://localhost:10080/simple-app/comparator/get"), equalTo("hellob"));
 
     }
 

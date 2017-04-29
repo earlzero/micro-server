@@ -31,8 +31,8 @@ public class ServerRunnerTest {
 		server1Count =0;
 		server2Count =0;
 
-		ServerData data1 = new ServerData(8080,Arrays.asList(), Mockito.mock(ApplicationContext.class), "url1", () -> "app-context");
-		ServerData data2 = new ServerData(8081, Arrays.asList(), Mockito.mock(ApplicationContext.class), "url2", () -> "test-context");
+		ServerData data1 = new ServerData(10080,Arrays.asList(), Mockito.mock(ApplicationContext.class), "url1", () -> "app-context");
+		ServerData data2 = new ServerData(10081, Arrays.asList(), Mockito.mock(ApplicationContext.class), "url2", () -> "test-context");
 
 		serverApplication1 = new TomcatApplication(AllData.builder().serverData(data1).build()){
 			@Override

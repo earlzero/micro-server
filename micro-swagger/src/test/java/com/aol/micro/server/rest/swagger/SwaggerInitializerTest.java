@@ -11,7 +11,7 @@ public class SwaggerInitializerTest {
 	@Test
 	public void testContextInitialized() {
 		SwaggerInitializer initializer = new SwaggerInitializer(ServerData.builder().resources(PStackX.of(new ServletStatusResource())).build());
-		ServerData serverData = new ServerData(8080,  ImmutableList.of(new ServletStatusResource()), null, "url", () -> "context");
+		ServerData serverData = new ServerData(10080,  ImmutableList.of(new ServletStatusResource()), null, "url", () -> "context");
 	
 		initializer.contextInitialized(null);
 	}

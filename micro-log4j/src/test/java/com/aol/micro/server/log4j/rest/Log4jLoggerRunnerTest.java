@@ -30,7 +30,7 @@ public class Log4jLoggerRunnerTest {
 
 	@Test
 	public void testChangeToWarn() {
-		assertThat(rest.get("http://localhost:8080/log4j/log4j/logger/change/to/warn/common"), is("WARN"));
+		assertThat(rest.get("http://localhost:10080/log4j/log4j/logger/change/to/warn/common"), is("WARN"));
 	}
 	
 

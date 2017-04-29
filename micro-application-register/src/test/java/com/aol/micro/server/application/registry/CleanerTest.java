@@ -40,7 +40,7 @@ public class CleanerTest {
                               registerConfig, 1);
 
         entry = new RegisterEntry(
-                                  8080, "host", "module", "context", new Date(), null, 8080);
+                                  10080, "host", "module", "context", new Date(), null, 10080);
 
     }
 

@@ -8,3 +8,5 @@ addons:
     packages:
       - oracle-java8-installer
 
+after_failure:
+  - cat target/surefire-reports/*.txt
